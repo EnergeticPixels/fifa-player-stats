@@ -18,6 +18,7 @@
                     <v-layout row>
                         <div>
                             <v-btn v-on:click='loadApi' color='primary'>Load Data</v-btn>
+                            <v-select v-if='apiData' v-bind:items='apiData.nations' v-model='selectedCountry' label='Select Nation' single-line bottom></v-select>
                         </div>
                     </v-layout>
                 </v-container>

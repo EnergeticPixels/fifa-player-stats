@@ -1,7 +1,8 @@
 new Vue({
     el: '#simpleApp',
     data: {
-        apiData: undefined
+        apiData: undefined,
+        selectedCountry: undefined
     },
     methods: {
         loadApi: function() {
