@@ -17,13 +17,7 @@
                 <v-container>
                     <v-layout row>
                         <div>
-                            <v-btn v-on:click='showAlert=true' color='primary'>Primary</v-btn>
-                        </div>
-                        <div>
-                            <v-btn v-on:click='showAlert=false' color='error'>Error</v-btn>
-                        </div>
-                        <div>
-                            <v-btn light disabled>Disabled</v-btn>
+                            <v-btn v-on:click='loadApi' color='primary'>Load Data</v-btn>
                         </div>
                     </v-layout>
                 </v-container>
@@ -33,17 +27,16 @@
                     </v-alert>
                 </v-container>
             </v-content>
+            <pre>
+                {{ $data }}
+            </pre>
         </v-app>
-
-        <pre>
-            {{ $data }}
-        </pre>
-
     </div>
 
 
     <script src='scripts/vue.js'></script>
     <script src='https://unpkg.com/vuetify/dist/vuetify.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
     <script src='scripts/site.js'></script>
 </body>
 </html>
