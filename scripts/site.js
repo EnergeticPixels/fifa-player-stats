@@ -13,11 +13,11 @@ new Vue({
         },
         successCallback: function(response) {
             this.apiData = response.data;
-            console.log('successCallback this.apiData: ', this.apiData);
+            //console.log('successCallback this.apiData: ', this.apiData);
 
         },
         errorCallback: function(response) {
-            console.log('errorCallback response: ', response);
+            //console.log('errorCallback response: ', response);
         },
         selectionChanged: function() {
             //console.log('selectionChanged: This.selectedCountry' , this.selectedCountry);
@@ -26,7 +26,7 @@ new Vue({
             this.showDetails = !this.showDetails;
         },
         openPlayerDialog: function(player) {
-            console.log('openPlayerDialog player:' , player);
+            //console.log('openPlayerDialog player:' , player);
             this.selectedPlayer = player;
             this.playerDialog = true;
             drawChart(player);

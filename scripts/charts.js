@@ -14,7 +14,7 @@ var getBarChartData = function(player_data) {
         );
     }
 
-    console.log('getBarChartData() data: ', data);
+    //console.log('getBarChartData() data: ', data);
 
     data_chart = [{
         key: "Player_Data_Chart",
@@ -31,7 +31,8 @@ var drawChart = function(player) {
             .x(function(d) { return d.label })
             .y(function(d) { return d.value })
             .staggerLabels(true)
-            .showValues(true);
+            .showValues(true)
+            .color(['#2278cf']);
 
         d3.select('#chart svg')
             .datum(getBarChartData(player))
