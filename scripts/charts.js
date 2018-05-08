@@ -15,35 +15,14 @@ var getBarChartData = function(player_data) {
     }
 
     console.log('getBarChartData() data: ', data);
-}
 
-var chartData = [
-    {
-      key: "Cumulative Return",
-      values: [
-        {
-          "label" : "A" ,
-          "value" : -29.765957771107
-        } ,
-        {
-          "label" : "B" ,
-          "value" : 0
-        } ,
-        {
-          "label" : "C" ,
-          "value" : 32.807804682612
-        } ,
-        {
-          "label" : "D" ,
-          "value" : 196.45946739256
-        } ,
-        {
-          "label" : "E" ,
-          "value" : 0.19434030906893
-        }
-      ]
-    }
-];
+    data_chart = [{
+        key: "Player_Data_Chart",
+        values: data
+    }];
+
+    return data_chart;
+};
 
 var drawChart = function(player) {
     getBarChartData(player);
@@ -55,7 +34,7 @@ var drawChart = function(player) {
             .showValues(true);
 
         d3.select('#chart svg')
-            .datum(chartData)
+            .datum(getBarChartData(player))
             .transition().duration(500)
             .call(chart);
 
