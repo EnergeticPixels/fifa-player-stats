@@ -2,7 +2,8 @@ new Vue({
     el: '#simpleApp',
     data: {
         apiData: undefined,
-        selectedCountry: undefined
+        selectedCountry: undefined,
+        showDetails: false
     },
     methods: {
         loadApi: function() {
@@ -18,6 +19,9 @@ new Vue({
         },
         selectionChanged: function() {
             //console.log('selectionChanged: This.selectedCountry' , this.selectedCountry);
+        },
+        toggleDetails: function() {
+            this.showDetails = !this.showDetails;
         }
     }
 
