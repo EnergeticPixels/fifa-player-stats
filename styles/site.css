@@ -23,3 +23,8 @@ img {
 #playerTable tr:not(.nohover):hover {
     background-color: #616161;
 }
+
+#chart svg {
+    height: 400px;
+    width: 100%;
+}

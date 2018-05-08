@@ -29,6 +29,7 @@ new Vue({
             console.log('openPlayerDialog player:' , player);
             this.selectedPlayer = player;
             this.playerDialog = true;
+            drawChart();
         }
     }
 
