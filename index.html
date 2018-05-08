@@ -22,7 +22,22 @@
                         </div>
                     </v-layout>
                     <v-content v-if='selectedCountry'>
-                        {{ apiData.top_10s[selectedCountry] }}
+                        <table>
+                            <tr>
+                                <th colspan='3'></th>
+                                <th>Age</th>
+                                <th>Overall</th>
+                            </tr>
+                            <tr v-for='player in apiData.top_10s[selectedCountry]'>
+                                <td><img v-bind:src='player.photo' alt='NOTFOUND' /></td>
+                                <td>{{ player.name }}</td>
+                                <td><img v-bind:src='player.club_logo' alt='NOTFOUND' /></td>
+                                <td>{{ player.age }}</td>
+                                <td>{{ player.Overall }}</td>
+                            </tr>
+
+                        </table>
+                        <!--{{ apiData.top_10s[selectedCountry] }}-->
                     </v-content>
                 </v-container>
             </v-content>
