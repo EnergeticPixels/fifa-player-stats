@@ -15,6 +15,9 @@ new Vue({
         },
         errorCallback: function(response) {
             console.log('errorCallback response: ', response);
+        },
+        selectionChanged: function() {
+            //console.log('selectionChanged: This.selectedCountry' , this.selectedCountry);
         }
     }
 

@@ -18,9 +18,12 @@
                     <v-layout row>
                         <div>
                             <v-btn v-on:click='loadApi' color='primary'>Load Data</v-btn>
-                            <v-select v-if='apiData' v-bind:items='apiData.nations' v-model='selectedCountry' label='Select Nation' single-line bottom></v-select>
+                            <v-select v-on:change='selectionChanged' v-if='apiData' v-bind:items='apiData.nations' v-model='selectedCountry' label='Select Nation' single-line bottom></v-select>
                         </div>
                     </v-layout>
+                    <v-content v-if='selectedCountry'>
+                        {{ apiData.top_10s[selectedCountry] }}
+                    </v-content>
                 </v-container>
             </v-content>
             <pre>
