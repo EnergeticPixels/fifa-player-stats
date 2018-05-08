@@ -35,22 +35,22 @@
                                 <th v-show='showDetails'>Age</th>
                                 <th v-show='showDetails'>Overall</th>
                             </tr>
-                            <tr v-on:click='playerDialog=true' v-for='player in apiData.top_10s[selectedCountry]'>
+                            <tr v-on:click='openPlayerDialog(player)' v-for='player in apiData.top_10s[selectedCountry]'>
                                 <td><img v-bind:src='player.photo' alt='NOTFOUND' /></td>
                                 <td>{{ player.name }}</td>
                                 <td><img v-bind:src='player.club_logo' alt='NOTFOUND' /></td>
                                 <td v-show='showDetails'>{{ player.age }}</td>
                                 <td v-show='showDetails'>{{ player.Overall }}</td>
                             </tr>
-
                         </table>
+                        <!--{{ apiData.top_10s[selectedCountry] }}-->
                     </v-content>
                 </v-container>
             </v-content>
-            <v-dialog v-model='playerDialog' persistent max-width='290'>
+            <v-dialog v-model='playerDialog' persistent max-width='400' v-if='selectedPlayer'>
                 <v-card>
-                    <v-card-title class='headline'>Use Google's Location service?</v-card-title>
-                    <v-card-text>Let Google help apps determine location. This means sending anonymnous locatoin data to Google when no apps are running.</v-card-text>
+                    <v-card-title class='headline'>Data for: {{ selectedPlayer.name }}</v-card-title>
+                    <v-card-text>{{ selectedPlayer }}</v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color='primary' @click.native='playerDialog=false'>Close</v-btn>

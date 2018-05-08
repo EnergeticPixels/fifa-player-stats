@@ -4,7 +4,8 @@ new Vue({
         apiData: undefined,
         selectedCountry: undefined,
         showDetails: false,
-        playerDialog: false
+        playerDialog: false,
+        selectedPlayer: undefined
     },
     methods: {
         loadApi: function() {
@@ -23,6 +24,11 @@ new Vue({
         },
         toggleDetails: function() {
             this.showDetails = !this.showDetails;
+        },
+        openPlayerDialog: function(player) {
+            console.log('openPlayerDialog player:' , player);
+            this.selectedPlayer = player;
+            this.playerDialog = true;
         }
     }
 
