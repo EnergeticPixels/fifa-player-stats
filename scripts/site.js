@@ -3,7 +3,8 @@ new Vue({
     data: {
         apiData: undefined,
         selectedCountry: undefined,
-        showDetails: false
+        showDetails: false,
+        playerDialog: false
     },
     methods: {
         loadApi: function() {

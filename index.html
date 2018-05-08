@@ -35,7 +35,7 @@
                                 <th v-show='showDetails'>Age</th>
                                 <th v-show='showDetails'>Overall</th>
                             </tr>
-                            <tr v-for='player in apiData.top_10s[selectedCountry]'>
+                            <tr v-on:click='playerDialog=true' v-for='player in apiData.top_10s[selectedCountry]'>
                                 <td><img v-bind:src='player.photo' alt='NOTFOUND' /></td>
                                 <td>{{ player.name }}</td>
                                 <td><img v-bind:src='player.club_logo' alt='NOTFOUND' /></td>
@@ -47,10 +47,22 @@
                     </v-content>
                 </v-container>
             </v-content>
+            <v-dialog v-model='playerDialog' persistent max-width='290'>
+                <v-card>
+                    <v-card-title class='headline'>Use Google's Location service?</v-card-title>
+                    <v-card-text>Let Google help apps determine location. This means sending anonymnous locatoin data to Google when no apps are running.</v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color='primary' @click.native='playerDialog=false'>Close</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
             <pre>
                 {{ $data }}
             </pre>
         </v-app>
+
+
     </div>
 
 
