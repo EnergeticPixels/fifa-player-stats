@@ -14,7 +14,24 @@
 
         <v-app>
             <v-content>
-                <v-container>Hello World</v-container>
+                <v-container>
+                    <v-layout row>
+                        <div>
+                            <v-btn v-on:click='showAlert=true' color='primary'>Primary</v-btn>
+                        </div>
+                        <div>
+                            <v-btn v-on:click='showAlert=false' color='error'>Error</v-btn>
+                        </div>
+                        <div>
+                            <v-btn light disabled>Disabled</v-btn>
+                        </div>
+                    </v-layout>
+                </v-container>
+                <v-container>
+                    <v-alert v-show='showAlert' color='success' icon='check-circle' value='true'>
+                        This is a success alert
+                    </v-alert>
+                </v-container>
             </v-content>
         </v-app>
 
