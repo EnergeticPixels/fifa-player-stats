@@ -21,14 +21,6 @@
                         </div>
                     </v-layout>
                 </v-container>
-                <v-container>
-                    <v-alert v-show='dataLoaded==1' color='success' icon='check-circle' value='true'>
-                        Data loaded successfully
-                    </v-alert>
-                    <v-alert v-show='dataLoaded==2' color='error' icon='warning' value='true'>
-                        Data Load Error
-                    </v-alert>
-                </v-container>
             </v-content>
             <pre>
                 {{ $data }}
